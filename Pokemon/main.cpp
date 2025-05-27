@@ -3,71 +3,56 @@
 using namespace std;
 
 int main() {
-    // Variables to store player name and chosen Pokemon
-    string player_name;
-    string chosen_pokemon;
+    
+    cout<<"Narrator’s Voice:\n" 
+        "Welcome, brave adventurer!\n" 
+        "You find yourself standing in front of a massive, ancient castle.\n" 
+        "The walls are cracked with age,\n" 
+        "and the doors creak as they slowly open in front of you.\n" 
+        "Inside, there are many rooms, each more mysterious than the last.\n" 
+        "Some may hold treasures beyond imagination,\n" 
+        "while others may hide dangers lurking in the shadows.\n";
 
-    // Introduction by the Professor
-    cout << "Professor Oak: Hello there! Welcome to the world of Pokemon!\n";
-    cout << "Professor Oak: My name is Oak. People call me the Pokemon "
-        "Professor!\n";
-    cout << "Professor Oak: But enough about me. Let's talk about you!\n";
+    cout << "\n####----####----####----####----####----####----####----####----####----\n";
 
-    // Taking player name as input
-    cout << "Professor Oak: First, tell me, what’s your name?\n";
-    cin >> player_name;
+    cout << "Mission Objective :\n"
+        "Your goal is simple, yet perilous—choose a room! \n"
+        "Once inside, who knows what you may find ?\n"
+        "Will it be riches, knowledge, or something… more sinister ?\n"
+        "It’s all up to the room you pick.\n";
 
-    cout << "Professor Oak: Ah, " << player_name
-        << "! What a fantastic name!\n";
-    cout << "Professor Oak: You must be eager to start your adventure. But "
-        "first, you’ll need a Pokemon of your own!\n";
+    cout << "\n####----####----####----####----####----####----####----####----####----\n";
 
-    // Presenting Pokemon choices
-    cout << "Professor Oak: I have three Pokemon here with me. They’re all "
-        "quite feisty!\n";
-    cout << "Professor Oak: Choose wisely...\n";
-    cout << "1. Charmander - The fire type. A real hothead!\n";
-    cout << "2. Bulbasaur - The grass type. Calm and collected!\n";
-    cout << "3. Squirtle - The water type. Cool as a cucumber!\n";
+    cout << "Narrator’s Voice:\n"
+        "The fate of your adventure lies in the room you choose.\n"
+        "Will you find riches or danger?\n"
+        "Only time will tell... Choose wisely, adventurer, for once you step inside,\n"
+        "there’s no turning back.\n";
 
-    int choice;
-    cout << "Professor Oak: So, which one will it be? Enter the number of "
-        "your choice: ";
-    cin >> choice;
+    cout << " Step 1:\n"
+        "Enter the castle, choose your room by entering a number(1, 2, or 3).\n";
 
-    // Store the chosen Pokemon based on user input
-    switch (choice) {
+    int room_number;
+    std::string room_outcome;
+
+    cin >> room_number;
+
+    switch (room_number) {
     case 1:
-        chosen_pokemon = "Charmander";
-        cout << "Professor Oak: A fiery choice! Charmander is yours!\n";
+        room_outcome = "A room full of gold coins! You can retire now, you lucky soul!\n";
         break;
-
     case 2:
-        chosen_pokemon = "Bulbasaur";
-        cout << "Professor Oak: A fine choice! Bulbasaur is always ready to "
-            "grow on you!\n";
+        room_outcome = "A library of ancient books! You gain immense knowledge, but beware… some knowledge comes with a price.\n";
         break;
-
     case 3:
-        chosen_pokemon = "Squirtle";
-        cout << "Professor Oak: Splendid! Squirtle will keep you cool under "
-            "pressure!\n";
+        room_outcome = "A sleeping dragon! You barely escape with your life. Perhaps next time, choose more wisely...\n";
         break;
-
     default:
-        cout << "Professor Oak: Hmm, that doesn't seem right. Let me choose "
-            "for you...\n";
-        chosen_pokemon = "Pikachu"; // Default if no valid choice is made
-        cout << "Professor Oak: Just kidding! Let's go with Pikachu, the "
-            "surprise guest!\n";
+        room_outcome = "A secret passage to the dungeon! Beware, danger lies ahead in the dark corridors.\n";
         break;
     }
 
-    // Concluding the first chapter
-    cout << "Professor Oak: " << chosen_pokemon << " and you, "
-        << player_name << ", are going to be the best of friends!\n";
-    cout << "Professor Oak: Your journey begins now! Get ready to explore "
-        "the vast world of Pokemon!\n";
+    cout << room_outcome;
 
     return 0;
 }
