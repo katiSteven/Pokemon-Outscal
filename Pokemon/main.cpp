@@ -10,19 +10,19 @@ int main() {
 
     int choice;
     cin >> choice;
+    string chosen_pokemon;
+    switch (choice) {
+    case 1:chosen_pokemon = "You chose Bulbasaur! A wise choice.\n";
+        break;
+    case 2:chosen_pokemon = "You chose Charmander! A fiery choice.\n";
+        break;
+    case 3:chosen_pokemon = "You chose Squirtle! A cool choice.\n";
+        break;
+    default:chosen_pokemon = "You chose Pikachu! A terrific choice.\n";
+        break;
+    }
 
-    if (choice == 1) {
-        cout << "You chose Bulbasaur! A wise choice.\n";
-    }
-    else if (choice == 2) {
-        cout << "You chose Charmander! A fiery choice.\n";
-    }
-    else if (choice == 3) {
-        cout << "You chose Squirtle! A cool choice.\n";
-    }
-    else {
-        cout << "Invalid choice. Please restart the game.\n";
-    }
+    cout << chosen_pokemon;
 
     return 0;
 }
