@@ -2,17 +2,18 @@
 #include <string>
 using namespace std;
 
-enum menu {
-    pizza,
-    burgers,
-    fries
+enum PokemonChoice{
+    Charmander,
+    Bulbasaur,
+    Squirtle,
+    InvalidChoice
 };
 
 int main() {
     
-    menu selection = fries;
+    PokemonChoice chosen_pokemon = InvalidChoice;
 
-    cout << selection;
+    cout << chosen_pokemon;
 
     return 0;
 }
