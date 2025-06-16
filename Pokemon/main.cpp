@@ -3,8 +3,6 @@
 using namespace std;
 
 void clearConsole() {
-    // This function clears the console screen.
-    // Note: This is platform-dependent. The following works on Windows.
 #ifdef _WIN32
     system("cls");
 #else
@@ -150,33 +148,26 @@ public:
 
     void explainMainQuest(const Player &player) {
         clearConsole();
-        cout << "1. Professor Oak: Oak-ay " << player.name << ", I am about to explain you about your upcoming grand adventure.\n";
+        cout << "Ah, "<<player.name<<", let me tell you about your grand adventure that's about to unfold!\n";
         waitForEnter();
-        cout << "2. Professor Oak : You see, becoming a Pokémon Master is no easy feat.It takes courage, wisdom, and a bit of luck.\n";
+        cout << "Becoming a Pokémon Master is no easy task. It demands courage, strategy, and sometimes a little bit of luck.\n";
         waitForEnter();
-        cout << "3. Professor Oak : Your mission, should you choose to accept it(and trust me, you really don’t have a choice) is to collect all the Pokémon Badges and conquer the Pokémon League.\n";
+        cout << "Your main mission is to collect all the Pokémon Badges and defeat the Pokémon League. Only then can you challenge the Elite Four   and aim for the    title of Champion." << player.name << "Wait, isn’t that just like every other Pokémon game?\n";
         waitForEnter();
-        cout << "4.[player.name] : Wait... that sounds a lot like every other Pokémon game out there.\n";
+        cout << "No breaking the fourth wall, " << player.name << "!This is serious business.\n";
         waitForEnter();
-        cout << "5. Professor Oak : Shhh!Don't break the fourth wall " << player.name << "! This is serious business.\n";
+        cout << "To achieve this, you must capture new Pokémon, battle wild creatures, challenge gym leaders, and keep your Pokémon healthy at the PokeCenter.\n";
         waitForEnter();
         clearConsole();
-        cout << "6. Professor Oak : To achieve this, you'll need to battle wild Pokémon, challenge gym leaders, and of course, keep your Pokémon healthy at the PokeCenter.\n";
+        cout << "Remember, you can only carry a limited number of Pokémon. Choose wisely who you want on your team!" << player.name << ": Piece of cake, right?\n";
         waitForEnter();
-        cout << "7. Professor Oak : Along the way, you'll capture new Pokémon to strengthen your team. Just remember—there’s a limit to how many Pokémon you can carry, so choose wisely!\n";
+        cout << "Ha! That’s what everyone thinks. But the path to becoming a Champion is filled with obstacles. Lose a battle, and it’s back to the start!\n";
         waitForEnter();
-        cout << "8." << player.name << " : Sounds like a walk in the park... right ?\n";
+        cout << "So, what do you say? Are you ready to embark on this epic journey to become the next Pokémon Champion?" << player.name << ": Ready as I’ll ever be, Professor!\n";
         waitForEnter();
-        cout << "9. Professor Oak : Hah!That’s what they all say!But beware, young Trainer, the path to victory is fraught with challenges.And if you lose a battle... well, let’s just say you'll be starting from square one.\n";
+        cout << "That’s the spirit! Now, your journey begins. Remember, it’s not just about battling—it’s about forming bonds with your Pokémon. Go, Trainer, the world of Pokémon awaits you!\n";
         waitForEnter();
-        cout << "10. Professor Oak : So, what do you say ? Are you ready to become the next Pokémon Champion ?\n";
-        clearConsole();
-        waitForEnter();
-        cout << "11." << player.name << " : Ready as I’ll ever be, Professor!\n";
-        waitForEnter();
-        cout << "12. Professor Oak : That’s the spirit!Now, your journey begins.\n";
-        waitForEnter();
-        cout << "13. Professor Oak : But first... let's just pretend I didn't forget to set up the actual game loop... Ahem, onwards!\n";
+        cout << "Oh, and about the actual game loop… let’s just pretend I didn’t forget to set it up. Onwards!\n";
         waitForEnter();
         clearConsole();
     }
