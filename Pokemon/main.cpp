@@ -16,21 +16,53 @@ enum class PokemonType {
     ELECTRIC
 };
 
-class Pokemon {
+class Pokemon {    
 public:
+    // Attributes 
     std::string name;
     PokemonType type;
     int health;
 
-    Pokemon() {}
-    Pokemon(string name, PokemonType type, int health) {
-        this->name = name;
-        this->type = type;
-        this->health = health;
+    // Constructor 
+    Pokemon() {
+        name = "Pikachu";
+        type = PokemonType::ELECTRIC;
+        health = 10;
     }
-
+    // Parameterized constructor 
+    Pokemon(string p_name, PokemonType p_type, int p_health) {
+        name = p_name;
+        type = p_type;
+        health = p_health;
+    }
+    // Copy constructor 
+    Pokemon(const Pokemon& other) {
+        name = other.name;
+        type = other.type;
+        health = other.health;
+    }
+    // Destructor
+    ~Pokemon() {
+        std::cout << name << " has been released.\n";
+    }
+    //Methods
     void attack() {
         cout << name << "attacks with a powerful move!";
+    }
+
+    void Print() {
+        cout << "Name: " << name << "\n";
+        cout << "Type: ";
+        switch (type) {
+            case PokemonType::ELECTRIC: cout << "ELECTRIC"; break;
+            case PokemonType::FIRE: cout << "FIRE"; break;
+            case PokemonType::GRASS: cout << "GRASS"; break;
+            case PokemonType::WATER: cout << "WATER"; break;
+            default:cout << "NONE"; break;
+        }
+        cout << "\n";
+        cout << "Health: " << health << "\n";
+        cout << "-----------------------\n";
     }
 };
 
@@ -39,14 +71,26 @@ public:
     std::string name;
     Pokemon chosenPokemon;
 
-    Player(){}
-    Player(string name, Pokemon chosenPokemon){
-        this->name = name;
-        this->chosenPokemon = chosenPokemon;
+    Player() {
+        name = "Trainer";
+        chosenPokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 10);
+        cout << "A new player named " << name << " has been created\n& their chosen Pokemon is " << chosenPokemon.name << "!!";
+    }
+
+    Player(std::string p_name, const Pokemon& p_chosenPokemon) {
+        name = p_name;
+        chosenPokemon = p_chosenPokemon;
+        cout << "A new player named " << name << " has been created\n& their chosen Pokemon is " << chosenPokemon.name << "!!";
+    }
+
+    Player(const Player &player) {
+        name = player.name;
+        chosenPokemon = player.chosenPokemon;
+        cout << "A new player named " << name << " has been created\n& their chosen Pokemon is " << chosenPokemon.name << "!!";
     }
 
     void choosePokemon(int choice) {
-        switch((PokemonChoice)choice)
+        switch ((PokemonChoice)choice)
         {
         case PokemonChoice::CHARMANDER:
             chosenPokemon = Pokemon("CHARMANDER", PokemonType::FIRE, 100);
@@ -64,9 +108,17 @@ public:
     }
 };
 
-class ProfessorOak {
+class Professor {
 public:
     std::string name;
+
+    Professor() {
+        name = "Professor Oak";
+    }
+
+    Professor(std::string name) {
+        this->name = name;
+    }
 
     void greetPlayer(Player &player) {
         cout << "Professor Oak : Hello there!Welcome to the world of Pokémon!\n"
@@ -107,17 +159,51 @@ public:
 };
 
 int main() {
-    Pokemon pokemon;
+
+#pragma region Introduction
+    /*Pokemon pokemon;
     Player player;
-    ProfessorOak professorOak;
+    Professor professorOak;
 
     professorOak.name = "ProfessorOak";
 
     professorOak.greetPlayer(player);
     professorOak.offerPokemonChoices(player);
 
-    cout << "Professor Oak : "<<player.chosenPokemon.name<<" and you, Ash, are going to be the best of friends!\n"
-        << "Professor Oak : Your journey begins now!Get ready to explore the vast world of Pokémon!\n";
+    cout << "Professor Oak : " << player.chosenPokemon.name << " and you, Ash, are going to be the best of friends!\n"
+        << "Professor Oak : Your journey begins now!Get ready to explore the vast world of Pokémon!\n";*/
+#pragma endregion
+
+#pragma region Intro 2
+    //Pokemon pokemon1;
+    //Player p = Player();
+    //cout << pokemon1.name << endl;
+
+    //// You can not print Enum class value directly
+    //cout << (int)(pokemon1.type) << endl;
+
+    //cout << pokemon1.health << endl;
+#pragma endregion
     
-    return 0;
+#pragma region OOPS and enums
+    //Pokemon defaultPokemon;
+    //Pokemon charmander = Pokemon("Charmander", PokemonType::FIRE, 100);
+    //defaultPokemon.Print();
+    //charmander.Print();
+    //Pokemon bulbasaur = Pokemon("Bulbasaur", PokemonType::GRASS, 100);
+    //Pokemon bulbasaur_2 = Pokemon(bulbasaur);
+    //bulbasaur.Print();
+    //bulbasaur_2.Print();
+    //bulbasaur_2.health = 80;
+    //bulbasaur_2.Print();
+#pragma endregion
+
+#pragma region The Legendary Constructors Scroll
+    Player trainer = Player();
+    Pokemon bulbasaur = Pokemon("Bulbasaur", PokemonType::GRASS, 20);
+    Player steven = Player("Steven", bulbasaur);
+    Player steven_2 = Player(steven);
+    Pokemon bulbasaur_2 = Pokemon(bulbasaur);
+#pragma endregion
+
 }
