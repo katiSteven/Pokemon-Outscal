@@ -2,6 +2,8 @@
 #include<string>
 using namespace std;
 
+bool keepPlaying;
+
 void clearConsole() {
 #ifdef _WIN32
     system("cls");
@@ -173,6 +175,50 @@ public:
     }
 };
 
+void gameLoop(Player player) {
+    int choice;
+	keepPlaying = true;
+    while (keepPlaying) {
+        clearConsole();
+        cout << "What would you like to do next - " << player.name <<"\n"
+            << "1. Battle Wild Pokémon\n"
+            << "2. Visit PokeCenter\n"
+            << "3. Challenge Gyms\n"
+            << "4. Enter Pokémon League\n"
+            << "5. Quit\n";
+        
+		cout << "Enter your choice: ";
+        cin >> choice;
+        switch (choice) {
+		case 1:
+			cout << "You look around... but all the wild Pokemon are on vacation. Maybe try again later?\\n";
+            cout << "[functionalities not implemented till now]";
+			break;
+        case 2:
+			cout << "You head to the PokeCenter, but Nurse Joy is out on a coffee break. Guess your Pokemon will have to tough it out for now!\\n";
+			cout << "[functionalities not implemented till now]";
+			break;
+        case 3:
+			cout << "You march up to the Gym, but it's closed for renovations. Seems like even Gym Leaders need a break!\\n";
+			cout << "[functionalities not implemented till now]";
+            break;
+        case 4:
+			cout << "You boldly step towards the Pokemon League... but the gatekeeper laughs and says, 'Maybe next time, champ!'\\n";
+			cout << "[functionalities not implemented till now]";
+			break;
+		case 5:
+			cout << "You try to quit, but Professor Oak's voice echoes: 'There's no quitting in Pokemon training!'\\n";
+            waitForEnter();
+			keepPlaying = false;
+			break;
+		default:
+			cout << "Invalid choice. Please try again.\n";
+			waitForEnter();
+			continue;
+        }
+    }
+}
+
 int main() {
 
 #pragma region Introduction
@@ -228,8 +274,12 @@ int main() {
     professor.explainMainQuest(player);
 
     // Placeholder for where the game loop will start
-    cout << "\n[Placeholder for the Game Loop]\n";
+    //cout << "\n[Placeholder for the Game Loop]\n";
+    gameLoop(player);
 #pragma endregion
 
+    gameLoop(player);
+
+    return 0;
 }
 
