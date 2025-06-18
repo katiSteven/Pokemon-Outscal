@@ -208,14 +208,13 @@ void gameLoop(Player player) {
 			break;
 		case 5:
 			cout << "You try to quit, but Professor Oak's voice echoes: 'There's no quitting in Pokemon training!'\\n";
-            waitForEnter();
 			keepPlaying = false;
 			break;
 		default:
 			cout << "Invalid choice. Please try again.\n";
-			waitForEnter();
 			continue;
         }
+        waitForEnter();
     }
 }
 
@@ -277,8 +276,6 @@ int main() {
     //cout << "\n[Placeholder for the Game Loop]\n";
     gameLoop(player);
 #pragma endregion
-
-    gameLoop(player);
 
     return 0;
 }
