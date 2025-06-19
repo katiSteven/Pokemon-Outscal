@@ -1,5 +1,7 @@
 #include<iostream>
 #include<string>
+#include "PokemonType.hpp"
+#include "PokemonChoice.hpp"
 using namespace std;
 
 bool keepPlaying;
@@ -16,19 +18,9 @@ void waitForEnter() {
     cin.get();
 };
 
-enum class PokemonChoice {
-    CHARMANDER = 1,
-    BULBASAUR,
-    SQUIRTLE,
-    PIKACHU
-};
 
-enum class PokemonType {
-    FIRE,
-    GRASS,
-    WATER,
-    ELECTRIC
-};
+
+
 
 class Pokemon {
 public:
@@ -235,7 +227,7 @@ int main() {
     //Pokemon pokemon1;
     //Player p = Player();
 #pragma endregion
-    
+
 #pragma region OOPS and enums
     //Pokemon defaultPokemon;
     //Pokemon charmander = Pokemon("Charmander", PokemonType::FIRE, 100);
@@ -280,4 +272,4 @@ int main() {
     return 0;
 
 
-#include "header.hpp"
+}
