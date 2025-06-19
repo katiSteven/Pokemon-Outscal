@@ -30,7 +30,7 @@ enum class PokemonType {
     ELECTRIC
 };
 
-class Pokemon {    
+class Pokemon {
 public:
     // Attributes 
     std::string name;
@@ -82,7 +82,7 @@ public:
         chosenPokemon = p_chosenPokemon;
     }
 
-    Player(const Player &player) {
+    Player(const Player& player) {
         name = player.name;
         chosenPokemon = player.chosenPokemon;
     }
@@ -278,5 +278,6 @@ int main() {
 #pragma endregion
 
     return 0;
-}
 
+
+#include "header.hpp"
