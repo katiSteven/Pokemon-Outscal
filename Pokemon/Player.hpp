@@ -1,13 +1,9 @@
-#include <iostream>
-#include "PokemonType.hpp"
-#include "PokemonChoice.hpp"
-#include "Utility.hpp"
-
+#include <string>
 using namespace std;
 
 class Player {
 public:
-	std::string name;
+	string name;
 	Pokemon chosenPokemon;
 
 	Player();
