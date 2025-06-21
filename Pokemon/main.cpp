@@ -5,8 +5,6 @@
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
 #include "Utility.hpp"
-#include "Player.hpp"
-
 using namespace std;
 
 class Pokemon {
@@ -45,6 +43,8 @@ public:
     }
 
 };
+
+#include "Player.hpp"
 
 class ProfessorOak {
 public:
@@ -127,6 +127,7 @@ void gameLoop(Player &player) {
         
 		cout << "Enter your choice: ";
         cin >> choice;
+		Utility::clearInputBuffer(); // Clear the input buffer to avoid issues with getline later
         switch (choice) {
 		case 1:
 			cout << "You look around... but all the wild Pokemon are on vacation. Maybe try again later?\\n";
