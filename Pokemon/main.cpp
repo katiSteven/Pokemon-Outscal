@@ -2,47 +2,49 @@
 #include<string>
 #include <limits>
 //
+
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
 #include "Utility.hpp"
+#include "Pokemon.hpp"
 using namespace std;
 
-class Pokemon {
-public:
-    // Attributes 
-    std::string name;
-    PokemonType type;
-    int health;
-
-    // Constructor 
-    Pokemon() {
-        name = "Pikachu";
-        type = PokemonType::ELECTRIC;
-        health = 10;
-    }
-    // Parameterized constructor 
-    Pokemon(string p_name, PokemonType p_type, int p_health) {
-        name = p_name;
-        type = p_type;
-        health = p_health;
-    }
-    // Copy constructor 
-    Pokemon(const Pokemon& other) {
-        name = other.name;
-        type = other.type;
-        health = other.health;
-    }
-    // Destructor
-    ~Pokemon() {
-        /*std::cout << name << " has been released.\n";*/
-    }
-    //Methods
-    void attack() {
-        cout << name << "attacks with a powerful move!";
-        Utility::waitForEnter();
-    }
-
-};
+//class Pokemon {
+//public:
+//    // Attributes 
+//    std::string name;
+//    PokemonType type;
+//    int health;
+//
+//    // Constructor 
+//    Pokemon() {
+//        name = "Pikachu";
+//        type = PokemonType::ELECTRIC;
+//        health = 10;
+//    }
+//    // Parameterized constructor 
+//    Pokemon(string p_name, PokemonType p_type, int p_health) {
+//        name = p_name;
+//        type = p_type;
+//        health = p_health;
+//    }
+//    // Copy constructor 
+//    Pokemon(const Pokemon& other) {
+//        name = other.name;
+//        type = other.type;
+//        health = other.health;
+//    }
+//    // Destructor
+//    ~Pokemon() {
+//        /*std::cout << name << " has been released.\n";*/
+//    }
+//    //Methods
+//    void attack() {
+//        cout << name << "attacks with a powerful move!";
+//        Utility::waitForEnter();
+//    }
+//
+//};
 
 #include "Player.hpp"
 
