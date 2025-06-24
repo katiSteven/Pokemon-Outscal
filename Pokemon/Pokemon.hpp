@@ -1,7 +1,7 @@
 #include<iostream>
 //
 using namespace std;
-
+enum PokemonType;
 class Pokemon {
 public:
     // Attributes 
