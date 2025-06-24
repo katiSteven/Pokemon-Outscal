@@ -2,10 +2,9 @@
 #include<string>
 #include <limits>
 //
-class Player;
-class Pokemon;
-enum PokemonType;
+#include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
+#include "Player.hpp"
 #include "Utility.hpp"
 using namespace std;
 

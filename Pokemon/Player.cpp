@@ -2,7 +2,7 @@
 //
 #include "PokemonChoice.hpp"
 #include "PokemonType.hpp"
-#include "Pokemon.hpp"
+//#include "Pokemon.hpp"
 #include "Player.hpp"
 #include "Utility.hpp"
 
