@@ -1,7 +1,8 @@
 //
+
 #include "PokemonType.hpp"
-#include "Pokemon.hpp"
 #include "Utility.hpp"
+#include "Pokemon.hpp"
 
 Pokemon::Pokemon() : name("Pikachu"), type(PokemonType::ELECTRIC), health(100) {}
 
