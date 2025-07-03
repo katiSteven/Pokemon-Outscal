@@ -1,5 +1,7 @@
 #include<string>
 #include <limits>
+//#include <vector>
+#include <cstdlib>
 //
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
@@ -7,6 +9,7 @@
 #include "ProfessorOak.h"
 #include "Utility.hpp"
 #include "Game.h"
+
 using namespace std;
 
 
@@ -50,6 +53,10 @@ int main() {
     //Pokemon bulbasaur_2 = Pokemon(bulbasaur);
 #pragma endregion
 
+    /*int randomNum = rand();
+    cout << "Random number: " << randomNum << endl;
+    return 0;*/
+
 #pragma region Main Quest
     // Create Pokemon and Player objects for the game
     Pokemon charmander("Charmander", PokemonType::FIRE, 100); // Using parameterized constructor
@@ -67,7 +74,8 @@ int main() {
 
     // Placeholder for where the game loop will start
     //cout << "\n[Placeholder for the Game Loop]\n";
-    Game::gameLoop(player);
+    Game game = Game();
+    game.gameLoop(player);
 #pragma endregion
 
     return 0;

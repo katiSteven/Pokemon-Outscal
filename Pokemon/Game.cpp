@@ -1,23 +1,42 @@
+#include <iostream>
+
 #include "PokemonChoice.hpp"
 #include "PokemonType.hpp"
 #include "Player.hpp"
 #include "Utility.hpp"
+
+//#include "Grass.hpp"
 #include "Game.h"
-#include "Grass.hpp"
+#include "WildEncounterManager.hpp"
+
 
 using namespace std;
 
-Grass forestGrass = {
-    {{"Zubat", PokemonType::GRASS, 40} , {"Caterpie", PokemonType::GRASS, 35}, {"Pidgey", PokemonType::GRASS, 40}},
-    80,
-    "Forest"
-};
-
+//Grass forestGrass = {
+//    {{"Zubat", PokemonType::GRASS, 40} , {"Caterpie", PokemonType::GRASS, 35}, {"Pidgey", PokemonType::GRASS, 40}},
+//    80,
+//    "Forest"
+//};
+//
 //Grass caveGrass = {
 //	{{"Geodude", PokemonType::GRASS, 50}},
 //	80,
 //    "Cave"
 //};
+
+Game::Game() {
+    
+    forestGrass = Grass();
+    forestGrass.wildPokemon = {
+            {"Zubat", PokemonType::GRASS, 40} ,
+            {"Caterpie", PokemonType::GRASS, 35},
+            {"Pidgey", PokemonType::GRASS, 40}
+    };
+    forestGrass.environment = "Forest";
+	forestGrass.encounterRate = 80;
+    
+    //Game::encounteredPokemon;
+}
 
 void Game::gameLoop(Player& player)
 {
@@ -35,10 +54,15 @@ void Game::gameLoop(Player& player)
         cout << "Enter your choice: ";
         cin >> choice;
         Utility::clearInputBuffer(); // Clear the input buffer to avoid issues with getline later
+
+        WildEncounterManager encounterManager = WildEncounterManager();
+
+        Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+
         switch (choice) {
         case 1:
-            cout << "You look around... but all the wild Pokemon are on vacation. Maybe try again later?\\n";
-            cout << "[functionalities not implemented till now]";
+			
+            cout << "A wild " << encounteredPokemon.name <<" appeared!\n";
             break;
         case 2:
             cout << "You head to the PokeCenter, but Nurse Joy is out on a coffee break. Guess your Pokemon will have to tough it out for now!\\n";
@@ -62,4 +86,5 @@ void Game::gameLoop(Player& player)
         }
         Utility::waitForEnter();
     }
+    cout << "Goodbye, " << player.name << "! Thanks for playing!\n";
 }
