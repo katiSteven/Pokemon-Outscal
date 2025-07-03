@@ -8,16 +8,16 @@
 using namespace std;
 
 Grass forestGrass = {
-    "Forest",
-    {{"Pidgey", PokemonType::GRASS, 40}, {"Caterpie", PokemonType::GRASS, 35}},
-    10
+    {{"Zubat", PokemonType::GRASS, 40} , {"Caterpie", PokemonType::GRASS, 35}, {"Pidgey", PokemonType::GRASS, 40}},
+    80,
+    "Forest"
 };
 
-Grass caveGrass = {
-	"Cave",
-	{{"Zubat", PokemonType::GRASS, 40}, {"Geodude", PokemonType::GRASS, 50}},
-	80
-};
+//Grass caveGrass = {
+//	{{"Geodude", PokemonType::GRASS, 50}},
+//	80,
+//    "Cave"
+//};
 
 void Game::gameLoop(Player& player)
 {
