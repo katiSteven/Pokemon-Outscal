@@ -9,7 +9,7 @@ public:
 	Pokemon chosenPokemon;
 
 	Player();
-	Player(std::string p_name, const Pokemon& p_chosenPokemon);
+	Player(string p_name, const Pokemon& p_chosenPokemon);
 
 	Player(const Player& player);
 

@@ -2,10 +2,8 @@
 //
 #include "PokemonChoice.hpp"
 #include "PokemonType.hpp"
-//#include "Pokemon.hpp"
-#include "Player.hpp"
 #include "Utility.hpp"
-
+#include "Player.hpp"
 using namespace std;
 
 Player::Player() {
@@ -13,7 +11,7 @@ Player::Player() {
     chosenPokemon = Pokemon(/*"Pikachu", PokemonType::ELECTRIC, 10*/);
 }
 
-Player::Player(std::string p_name, const Pokemon& p_chosenPokemon) {
+Player::Player(string p_name, const Pokemon& p_chosenPokemon) {
     name = p_name;
     chosenPokemon = p_chosenPokemon;
 }

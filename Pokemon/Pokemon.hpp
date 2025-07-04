@@ -4,7 +4,7 @@ class Pokemon {
 public:
     // Attributes 
     string name;
-    PokemonType type;
+    PokemonType p_type;
     int health;
 
     // Constructor 
