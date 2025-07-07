@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "PokemonChoice.hpp"
-#include "PokemonType.hpp"
+//#include "PokemonType.hpp"
 #include "Player.hpp"
 #include "Utility.hpp"
 
@@ -63,6 +63,7 @@ void Game::gameLoop(Player& player)
         case 1:
 			
             cout << "A wild " << encounteredPokemon.name <<" appeared!\n";
+            //Battle(player.chosenPokemon, encounteredPokemon);
             break;
         case 2:
             cout << "You head to the PokeCenter, but Nurse Joy is out on a coffee break. Guess your Pokemon will have to tough it out for now!\\n";
@@ -87,4 +88,30 @@ void Game::gameLoop(Player& player)
         Utility::waitForEnter();
     }
     cout << "Goodbye, " << player.name << "! Thanks for playing!\n";
+}
+
+void Game::Battle(Pokemon& chosenPokemon, Pokemon& encounteredPokemon) {
+    while (!chosenPokemon.isFainted() && !encounteredPokemon.isFainted()) {
+        Utility::clearConsole();
+
+		cout << "Your " << chosenPokemon.name << " has " << chosenPokemon.health << " health.\n";
+		cout << "Wild " << encounteredPokemon.name << " has " << encounteredPokemon.health << " health.\n";
+
+		cout << "Choose your action:\n";
+		cout << "1. Attack\n";
+
+		int action;
+		cin >> action;
+		Utility::clearInputBuffer();
+
+		if (action == 1) {
+			chosenPokemon.attack(encounteredPokemon);
+			if (!encounteredPokemon.isFainted()) {
+				encounteredPokemon.attack(chosenPokemon);
+			}
+		}else {
+			cout << "Invalid action. Please try again.\n";
+			continue;
+		}
+    }
 }

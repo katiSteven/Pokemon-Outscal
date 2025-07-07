@@ -1,4 +1,6 @@
 #include<iostream>
+//
+#include "PokemonType.hpp"
 using namespace std;
 class Pokemon {
 public:
@@ -6,6 +8,7 @@ public:
     string name;
     PokemonType p_type;
     int health;
+    int maxHealth;
 
     // Constructor 
     Pokemon();
@@ -16,5 +19,9 @@ public:
     // Destructor
     ~Pokemon();
     //Methods
-    void attack();
+	void attack(Pokemon& target);
+
+    void TakeDamage(int damage);
+
+    bool isFainted();
 };

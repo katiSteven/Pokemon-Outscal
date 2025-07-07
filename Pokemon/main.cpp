@@ -3,7 +3,7 @@
 //#include <vector>
 #include <cstdlib>
 //
-#include "PokemonType.hpp"
+//#include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
 #include "Player.hpp"
 #include "ProfessorOak.h"

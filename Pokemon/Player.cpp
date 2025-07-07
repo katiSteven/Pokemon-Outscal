@@ -1,7 +1,7 @@
 #include <iostream>
 //
 #include "PokemonChoice.hpp"
-#include "PokemonType.hpp"
+//#include "PokemonType.hpp"
 #include "Utility.hpp"
 #include "Player.hpp"
 using namespace std;

@@ -1,6 +1,6 @@
 //
 
-#include "PokemonType.hpp"
+//#include "PokemonType.hpp"
 #include "Utility.hpp"
 #include "Pokemon.hpp"
 
@@ -16,7 +16,21 @@ Pokemon::~Pokemon() {
 	//Destructor logic here if needed
 }
 
-void Pokemon::attack() {
-	std::cout << name << " attacks with a powerful move!" << std::endl;
+void Pokemon::attack(Pokemon& target)
+{
+	int damage = 10;
+	cout << name << " attacks " << target.name << " for " << damage << " damage!\\n";
+	target.TakeDamage(damage);
 	Utility::waitForEnter();
+}
+
+void Pokemon::TakeDamage(int damage)
+{
+	health -= damage;
+	if (health < 0) { health = 0; }
+}
+
+bool Pokemon::isFainted()
+{
+	return health <= 0;
 }

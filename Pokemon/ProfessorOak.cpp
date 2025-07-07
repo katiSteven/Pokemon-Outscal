@@ -1,5 +1,5 @@
 #include "PokemonChoice.hpp"
-#include "PokemonType.hpp"
+//#include "PokemonType.hpp"
 #include "Player.hpp"
 #include "Utility.hpp"
 #include "ProfessorOak.h"

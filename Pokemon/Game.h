@@ -13,5 +13,6 @@ private:
 public:
     Game();
     void gameLoop(Player& player);
+    void Battle(Pokemon& chosenPokemon, Pokemon& encounteredPokemon);
 };
 
