@@ -8,7 +8,7 @@ using namespace std;
 
 Player::Player() {
     name = "Trainer";
-    chosenPokemon = Pokemon(/*"Pikachu", PokemonType::ELECTRIC, 10*/);
+    chosenPokemon = Pokemon();
 }
 
 Player::Player(string p_name, const Pokemon& p_chosenPokemon) {
@@ -25,16 +25,16 @@ void Player::choosePokemon(int choice) {
     switch ((PokemonChoice)choice)
     {
     case PokemonChoice::CHARMANDER:
-        chosenPokemon = Pokemon("CHARMANDER", PokemonType::FIRE, 100);
+        chosenPokemon = Pokemon("CHARMANDER", PokemonType::FIRE, 50, 30);
         break;
     case PokemonChoice::BULBASAUR:
-        chosenPokemon = Pokemon("BULBASAUR", PokemonType::GRASS, 100);
+        chosenPokemon = Pokemon("BULBASAUR", PokemonType::GRASS, 70, 20);
         break;
     case PokemonChoice::SQUIRTLE:
-        chosenPokemon = Pokemon("SQUIRTLE", PokemonType::WATER, 100);
+        chosenPokemon = Pokemon("SQUIRTLE", PokemonType::WATER, 90, 10);
         break;
     default:
-        chosenPokemon = Pokemon("PIKACHU", PokemonType::ELECTRIC, 100);
+        chosenPokemon = Pokemon("PIKACHU", PokemonType::ELECTRIC, 70, 30);
         break;
     }
     cout << "Player: " << name << " chose " << chosenPokemon.name << "!\n";

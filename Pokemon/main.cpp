@@ -59,11 +59,11 @@ int main() {
 
 #pragma region Main Quest
     // Create Pokemon and Player objects for the game
-    Pokemon charmander("Charmander", PokemonType::FIRE, 100); // Using parameterized constructor
+    //Pokemon charmander("Charmander", PokemonType::FIRE, 100); // Using parameterized constructor
 
     // Continue with the main flow of the game
     ProfessorOak professor("Professor Oak");
-    Player player("Ash", charmander);
+    Player player = Player();
 
     // Greet the player and offer Pokemon choices
     professor.greetPlayer(player);

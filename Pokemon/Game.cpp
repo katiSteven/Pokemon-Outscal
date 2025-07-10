@@ -26,14 +26,26 @@ using namespace std;
 
 Game::Game() {
     
-    forestGrass = Grass();
-    forestGrass.wildPokemon = {
-            {"Zubat", PokemonType::GRASS, 40} ,
-            {"Caterpie", PokemonType::GRASS, 35},
-            {"Pidgey", PokemonType::GRASS, 40}
-    };
+    /*forestGrass = Grass();
+	Pokemon zubat("Zubat", PokemonType::GRASS, 40, 20);
+	Pokemon caterpie("Caterpie", PokemonType::GRASS, 35, 15);
+	Pokemon pidgey("Pidgey", PokemonType::GRASS, 40, 25);
+    forestGrass.wildPokemon.push_back(zubat);
+	forestGrass.wildPokemon.push_back(caterpie);
+	forestGrass.wildPokemon.push_back(pidgey);
+    
     forestGrass.environment = "Forest";
-	forestGrass.encounterRate = 80;
+	forestGrass.encounterRate = 80;*/
+
+    forestGrass = Grass{
+        forestGrass.wildPokemon = {
+            Pokemon("Zubat", PokemonType::GRASS, 40, 20),
+            Pokemon("Caterpie", PokemonType::GRASS, 35, 15),
+            Pokemon("Pidgey", PokemonType::GRASS, 40, 25)
+        },
+        80,
+        "Forest"
+    };
     
     //Game::encounteredPokemon;
 }
@@ -63,7 +75,7 @@ void Game::gameLoop(Player& player)
         case 1:
 			
             cout << "A wild " << encounteredPokemon.name <<" appeared!\n";
-            //Battle(player.chosenPokemon, encounteredPokemon);
+            Battle(player.chosenPokemon, encounteredPokemon);
             break;
         case 2:
             cout << "You head to the PokeCenter, but Nurse Joy is out on a coffee break. Guess your Pokemon will have to tough it out for now!\\n";
