@@ -8,6 +8,7 @@
 #include "Player.hpp"
 #include "ProfessorOak.h"
 #include "Utility.hpp"
+//#include "WildEncounterManager.hpp"
 #include "Game.h"
 
 using namespace std;

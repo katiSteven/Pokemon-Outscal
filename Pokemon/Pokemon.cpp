@@ -4,13 +4,13 @@
 #include "Utility.hpp"
 #include "Pokemon.hpp"
 
-Pokemon::Pokemon() : name("Pikachu"), p_type(PokemonType::ELECTRIC), health(70), attackPower(30) {}
+Pokemon::Pokemon() : name("Pikachu"), p_type(PokemonType::ELECTRIC), health(70), maxHealth(70), attackPower(30) {}
 
 Pokemon::Pokemon(std::string p_name, PokemonType p_type, int p_health, int p_attackPower)
-	: name(p_name), p_type(p_type), health(p_health), attackPower(p_attackPower) {}
+	: name(p_name), p_type(p_type), health(p_health), maxHealth(p_health), attackPower(p_attackPower) {}
 
 Pokemon::Pokemon(const Pokemon& other)
-	: name(other.name), p_type(other.p_type), health(other.health), attackPower(other.attackPower) {}
+	: name(other.name), p_type(other.p_type), health(other.health), maxHealth(other.health), attackPower(other.attackPower) {}
 
 Pokemon::~Pokemon() {
 	//Destructor logic here if needed

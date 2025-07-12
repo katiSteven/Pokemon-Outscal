@@ -1,41 +1,15 @@
 #include <iostream>
 
 #include "PokemonChoice.hpp"
-//#include "PokemonType.hpp"
 #include "Player.hpp"
 #include "Utility.hpp"
-
-//#include "Grass.hpp"
 #include "Game.h"
-#include "WildEncounterManager.hpp"
-
+//#include "WildEncounterManager.hpp"
+#include "BattleManager.hpp"
 
 using namespace std;
 
-//Grass forestGrass = {
-//    {{"Zubat", PokemonType::GRASS, 40} , {"Caterpie", PokemonType::GRASS, 35}, {"Pidgey", PokemonType::GRASS, 40}},
-//    80,
-//    "Forest"
-//};
-//
-//Grass caveGrass = {
-//	{{"Geodude", PokemonType::GRASS, 50}},
-//	80,
-//    "Cave"
-//};
-
 Game::Game() {
-    
-    /*forestGrass = Grass();
-	Pokemon zubat("Zubat", PokemonType::GRASS, 40, 20);
-	Pokemon caterpie("Caterpie", PokemonType::GRASS, 35, 15);
-	Pokemon pidgey("Pidgey", PokemonType::GRASS, 40, 25);
-    forestGrass.wildPokemon.push_back(zubat);
-	forestGrass.wildPokemon.push_back(caterpie);
-	forestGrass.wildPokemon.push_back(pidgey);
-    
-    forestGrass.environment = "Forest";
-	forestGrass.encounterRate = 80;*/
 
     forestGrass = Grass{
         forestGrass.wildPokemon = {
@@ -46,14 +20,13 @@ Game::Game() {
         80,
         "Forest"
     };
-    
-    //Game::encounteredPokemon;
 }
 
 void Game::gameLoop(Player& player)
 {
     int choice;
     bool keepPlaying = true;
+	BattleManager battleManager = BattleManager();
     while (keepPlaying) {
         Utility::clearConsole();
         cout << "What would you like to do next - " << player.name << "\n"
@@ -69,17 +42,18 @@ void Game::gameLoop(Player& player)
 
         WildEncounterManager encounterManager = WildEncounterManager();
 
-        Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
-
         switch (choice) {
         case 1:
-			
+            
+            encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
             cout << "A wild " << encounteredPokemon.name <<" appeared!\n";
-            Battle(player.chosenPokemon, encounteredPokemon);
+            //Battle(player.chosenPokemon, encounteredPokemon);
+            battleManager.startBattle(player, encounteredPokemon);
             break;
         case 2:
-            cout << "You head to the PokeCenter, but Nurse Joy is out on a coffee break. Guess your Pokemon will have to tough it out for now!\\n";
-            cout << "[functionalities not implemented till now]";
+            std::cout << "You head to the PokeCenter.\\n";
+            player.chosenPokemon.heal();
+            std::cout << player.chosenPokemon.name << "'s health is fully restored!\\n";
             break;
         case 3:
             cout << "You march up to the Gym, but it's closed for renovations. Seems like even Gym Leaders need a break!\\n";
@@ -100,30 +74,4 @@ void Game::gameLoop(Player& player)
         Utility::waitForEnter();
     }
     cout << "Goodbye, " << player.name << "! Thanks for playing!\n";
-}
-
-void Game::Battle(Pokemon& chosenPokemon, Pokemon& encounteredPokemon) {
-    while (!chosenPokemon.isFainted() && !encounteredPokemon.isFainted()) {
-        Utility::clearConsole();
-
-		cout << "Your " << chosenPokemon.name << " has " << chosenPokemon.health << " health.\n";
-		cout << "Wild " << encounteredPokemon.name << " has " << encounteredPokemon.health << " health.\n";
-
-		cout << "Choose your action:\n";
-		cout << "1. Attack\n";
-
-		int action;
-		cin >> action;
-		Utility::clearInputBuffer();
-
-		if (action == 1) {
-			chosenPokemon.attack(encounteredPokemon);
-			if (!encounteredPokemon.isFainted()) {
-				encounteredPokemon.attack(chosenPokemon);
-			}
-		}else {
-			cout << "Invalid action. Please try again.\n";
-			continue;
-		}
-    }
 }

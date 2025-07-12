@@ -4,6 +4,7 @@
 //
 #include "Pokemon.hpp"
 #include "Grass.hpp"
+//#include "Game.h"
 #include "WildEncounterManager.hpp"
 
 WildEncounterManager::WildEncounterManager() {
@@ -13,7 +14,7 @@ WildEncounterManager::WildEncounterManager() {
 Pokemon WildEncounterManager::getRandomPokemonFromGrass(const Grass& grass) {
 	int randomIndex;
 
-	randomIndex = rand() / grass.wildPokemon.size();
+	randomIndex = rand() % grass.wildPokemon.size();
 
 	return grass.wildPokemon[randomIndex];
 }
