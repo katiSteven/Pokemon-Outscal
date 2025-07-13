@@ -46,8 +46,6 @@ void Game::gameLoop(Player& player)
         case 1:
             
             encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
-            cout << "A wild " << encounteredPokemon.name <<" appeared!\n";
-            //Battle(player.chosenPokemon, encounteredPokemon);
             battleManager.startBattle(player, encounteredPokemon);
             break;
         case 2:

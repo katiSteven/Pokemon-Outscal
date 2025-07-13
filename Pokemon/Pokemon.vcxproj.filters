@@ -74,5 +74,8 @@
     <ClInclude Include="BattleManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BattleState.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
