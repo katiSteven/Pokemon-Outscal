@@ -3,8 +3,8 @@
 //
 
 
-#include "Grass.hpp"
-#include "WildEncounterManager.hpp"
+#include "../Pokemon/Grass.hpp"
+#include "../Battle/WildEncounterManager.hpp"
 using namespace std;
 
 class Game {

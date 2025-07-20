@@ -1,8 +1,9 @@
 //
 
 //#include "PokemonType.hpp"
-#include "Utility.hpp"
-#include "Pokemon.hpp"
+//#include "../Utility.hpp"
+#include "../include/Utility/Utility.hpp"
+#include "../include/Pokemon/Pokemon.hpp"
 
 Pokemon::Pokemon() : name("Pikachu"), p_type(PokemonType::ELECTRIC), health(70), maxHealth(70), attackPower(30) {}
 
@@ -18,6 +19,7 @@ Pokemon::~Pokemon() {
 
 void Pokemon::attack(Pokemon& target)
 {
+	
 	int damage = attackPower;
 	cout << name << " attacks " << target.name << " for " << damage << " damage!\\n";
 	target.TakeDamage(damage);

@@ -1,6 +1,6 @@
 #include<iostream>
 //
-#include "PokemonType.hpp"
+#include "../include/Pokemon/PokemonType.hpp"
 using namespace std;
 class Pokemon {
 public:

@@ -1,8 +1,8 @@
-#include "PokemonChoice.hpp"
+#include "../include/Pokemon/PokemonChoice.hpp"
 //#include "PokemonType.hpp"
-#include "Player.hpp"
-#include "Utility.hpp"
-#include "ProfessorOak.h"
+#include "../include/Character/Player/Player.hpp"
+#include "../include/Utility/Utility.hpp"
+#include "../include/Character/ProfessorOak.h"
 
 using namespace std;
 

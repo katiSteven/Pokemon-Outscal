@@ -1,6 +1,6 @@
-#include "Player.hpp"
-#include "Utility.hpp"
-#include "BattleManager.hpp"
+#include "../include/Character/Player/Player.hpp"
+#include "../include/Utility/Utility.hpp"
+#include "../include/Battle/BattleManager.hpp"
 
 void BattleManager::startBattle(Player& player, Pokemon& wildPokemon)
 {

@@ -1,11 +1,11 @@
 #include <iostream>
 
-#include "PokemonChoice.hpp"
-#include "Player.hpp"
-#include "Utility.hpp"
-#include "Game.h"
+#include "../include/Pokemon/PokemonChoice.hpp"
+#include "../include/Character/Player/Player.hpp"
+#include "../include/Utility/Utility.hpp"
+#include "../include/Main/Game.h"
 //#include "WildEncounterManager.hpp"
-#include "BattleManager.hpp"
+#include "../include/Battle/BattleManager.hpp"
 
 using namespace std;
 

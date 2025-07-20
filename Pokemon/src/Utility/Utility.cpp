@@ -1,6 +1,6 @@
 #include <iostream>
 #include <limits>
-#include "Utility.hpp"
+#include "../include/Utility/Utility.hpp"
 using namespace std;
 
 void Utility::clearConsole() {

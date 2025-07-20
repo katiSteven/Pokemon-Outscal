@@ -1,5 +1,5 @@
 
-#include "BattleState.hpp"
+#include "../Battle/BattleState.hpp"
 
 class BattleManager {
 public:

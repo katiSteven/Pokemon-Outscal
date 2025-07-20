@@ -1,6 +1,7 @@
 #include <string>
-#include "Pokemon.hpp"
-
+//#include "Pokemon.hpp"
+//#include "..\Pokemon\include\Pokemon.hpp"
+#include "../include/Pokemon/Pokemon.hpp"
 using namespace std;
 
 class Player {

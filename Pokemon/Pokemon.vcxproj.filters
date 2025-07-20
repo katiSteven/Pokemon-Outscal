@@ -15,28 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Battle\BattleManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Battle\WildEncounterManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Character\ProfessorOak.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Character\Player\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pokemon\Pokemon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Utility.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Pokemon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ProfessorOak.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WildEncounterManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BattleManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,37 +44,37 @@
     <ClInclude Include="header.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PokemonType.hpp">
+    <ClInclude Include="include\Battle\BattleManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PokemonChoice.hpp">
+    <ClInclude Include="include\Battle\BattleState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Utility.hpp">
+    <ClInclude Include="include\Battle\WildEncounterManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.hpp">
+    <ClInclude Include="include\Character\ProfessorOak.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProfessorOak.h">
+    <ClInclude Include="include\Character\Player\Player.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
+    <ClInclude Include="include\Main\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Grass.hpp">
+    <ClInclude Include="include\Pokemon\Grass.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Pokemon.hpp">
+    <ClInclude Include="include\Pokemon\Pokemon.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WildEncounterManager.hpp">
+    <ClInclude Include="include\Pokemon\PokemonChoice.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BattleManager.hpp">
+    <ClInclude Include="include\Pokemon\PokemonType.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BattleState.hpp">
+    <ClInclude Include="include\Utility\Utility.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

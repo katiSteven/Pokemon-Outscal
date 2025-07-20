@@ -2,10 +2,11 @@
 #include <ctime>
 #include <vector>
 //
-#include "Pokemon.hpp"
-#include "Grass.hpp"
+//#include "Pokemon.hpp"
+#include "..\include\Pokemon\Pokemon.hpp"
+#include "../include/Pokemon/Grass.hpp"
 //#include "Game.h"
-#include "WildEncounterManager.hpp"
+#include "../include/Battle/WildEncounterManager.hpp"
 
 WildEncounterManager::WildEncounterManager() {
 	srand(time(0)); // Seed the random number generator

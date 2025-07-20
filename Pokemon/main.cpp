@@ -4,12 +4,12 @@
 #include <cstdlib>
 //
 //#include "PokemonType.hpp"
-#include "PokemonChoice.hpp"
-#include "Player.hpp"
-#include "ProfessorOak.h"
-#include "Utility.hpp"
+#include "../include/Pokemon/PokemonChoice.hpp"
+#include "../include/Character/Player/Player.hpp"
+#include "../include/Character/ProfessorOak.h"
+#include "../include/Utility/Utility.hpp"
 //#include "WildEncounterManager.hpp"
-#include "Game.h"
+#include "../include/Main/Game.h"
 
 using namespace std;
 
