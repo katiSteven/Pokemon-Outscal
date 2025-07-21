@@ -2,8 +2,11 @@
 //#include <string>
 
 using namespace std;
-struct Grass {
-    vector<Pokemon> wildPokemon;
-    int encounterRate;
-    string environment;
-};
+namespace N_Pokemon {
+    struct Grass {
+        vector<Pokemon> wildPokemon;
+        int encounterRate;
+        string environment;
+    };
+
+}

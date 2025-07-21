@@ -63,8 +63,8 @@ int main() {
     //Pokemon charmander("Charmander", PokemonType::FIRE, 100); // Using parameterized constructor
 
     // Continue with the main flow of the game
-    ProfessorOak professor("Professor Oak");
-    Player player = Player();
+    N_Character::ProfessorOak professor("Professor Oak");
+    N_Player::Player player = N_Player::Player::Player();
 
     // Greet the player and offer Pokemon choices
     professor.greetPlayer(player);
@@ -75,7 +75,7 @@ int main() {
 
     // Placeholder for where the game loop will start
     //cout << "\n[Placeholder for the Game Loop]\n";
-    Game game = Game();
+    N_Main::Game game = N_Main::Game::Game();
     game.gameLoop(player);
 #pragma endregion
 

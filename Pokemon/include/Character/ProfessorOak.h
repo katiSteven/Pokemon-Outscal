@@ -2,18 +2,19 @@
 //
 
 using namespace std;
+namespace N_Character {
+    class ProfessorOak {
+    public:
+        std::string name;
 
-class ProfessorOak {
-public:
-    std::string name;
+        ProfessorOak();
 
-    ProfessorOak();
+        ProfessorOak(std::string p_name);
 
-    ProfessorOak(std::string p_name);
+        void greetPlayer(N_Player::Player& player);
 
-    void greetPlayer(Player& player);
+        void offerPokemonChoices(N_Player::Player& player);
 
-    void offerPokemonChoices(Player& player);
-
-    void explainMainQuest(const Player& player);
-};
+        void explainMainQuest(const N_Player::Player& player);
+    };
+}

@@ -1,9 +1,10 @@
 //#include "Pokemon.hpp"
 
-
-struct BattleState {
-	Pokemon* playerPokemon;
-	Pokemon* wildPokemon;
-	bool isPlayerTurn;
-	bool isOngoing;
-};
+namespace N_Battle {
+	struct BattleState {
+		N_Pokemon::Pokemon* playerPokemon;
+		N_Pokemon::Pokemon* wildPokemon;
+		bool isPlayerTurn;
+		bool isOngoing;
+	};
+}

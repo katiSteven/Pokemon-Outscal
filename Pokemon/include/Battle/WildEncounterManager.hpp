@@ -2,11 +2,12 @@
 //
 //#include "Grass.hpp"
 using namespace std;
+namespace N_Battle {
+	class WildEncounterManager {
+	public:
 
-class WildEncounterManager {
-public:
+		WildEncounterManager();
 
-	WildEncounterManager();
-
-	Pokemon getRandomPokemonFromGrass(const Grass& grass);
-};
+		N_Pokemon::Pokemon getRandomPokemonFromGrass(const N_Pokemon::Grass& grass);
+	};
+}
