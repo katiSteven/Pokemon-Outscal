@@ -1,0 +1,16 @@
+#pragma once
+#include "../include/Pokemon/Pokemon.hpp"
+
+namespace N_Pokemon {
+	namespace N_Pokemons {
+
+		class Pidgey : public Pokemon {
+		public:
+			// Constructor
+			Pidgey();
+
+			// Member function to perform a Gust attack
+			void WingAttack(Pokemon& target);
+		};
+	}
+}

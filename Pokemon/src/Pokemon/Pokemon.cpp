@@ -19,7 +19,6 @@ namespace N_Pokemon {
 
 	void Pokemon::attack(Pokemon& target)
 	{
-
 		int damage = attackPower;
 		cout << name << " attacks " << target.name << " for " << damage << " damage!\\n";
 		target.TakeDamage(damage);
