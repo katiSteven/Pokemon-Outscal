@@ -1,0 +1,20 @@
+#include <iostream>
+#include <limits>
+#include "../include/Utility/Utility.hpp"
+using namespace std;
+namespace N_Utility {
+	void Utility::clearConsole() {
+#ifdef _WIN32
+		system("cls");
+#else
+		(void)system("clear");
+#endif
+	}
+
+	void Utility::waitForEnter() {
+		cin.get();
+	};
+	void Utility::clearInputBuffer() {
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
+}
