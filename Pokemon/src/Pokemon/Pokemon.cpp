@@ -17,6 +17,18 @@ namespace N_Pokemon {
 		//Destructor logic here if needed
 	}
 
+	std::string Pokemon::getName() { return name; }
+	PokemonType Pokemon::getType() { return p_type; }
+	int Pokemon::getHealth() { return health; }
+	int Pokemon::getMaxHealth() { return maxHealth; }
+	int Pokemon::getAttackPower() { return attackPower; }
+
+	void Pokemon::setName(std::string p_name) { name = p_name; }
+	void Pokemon::setType(PokemonType p_type) { this->p_type = p_type; }
+	void Pokemon::setHealth(int p_health) { health = p_health; }
+	void Pokemon::setMaxHealth(int p_maxHealth) { maxHealth = p_maxHealth; }
+	void Pokemon::setAttackPower(int p_attackPower) { attackPower = p_attackPower; }
+
 	void Pokemon::attack(Pokemon& target)
 	{
 		int damage = attackPower;

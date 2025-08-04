@@ -8,8 +8,7 @@ namespace N_Pokemon{
 		public:
 			//constructor
 			Zubat();
-
-			//attack
+		private:
 			void Supersonic(Pokemon& target);
 		};
 	}

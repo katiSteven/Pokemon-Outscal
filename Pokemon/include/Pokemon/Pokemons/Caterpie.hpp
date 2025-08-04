@@ -8,7 +8,7 @@ namespace N_Pokemon {
 		public:
 			//constructor
 			Caterpie();
-
+		private:
 			void bugBite(Pokemon& target);
 		};
 

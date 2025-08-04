@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/Pokemon/PokemonType.hpp"
+//#include "../include/Pokemon/PokemonType.hpp"
 #include "../include/Pokemon/Pokemons/Pidgey.hpp"
 #include "../include/Utility/Utility.hpp"
 

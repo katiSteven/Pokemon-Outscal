@@ -8,8 +8,7 @@ namespace N_Pokemon {
 		public:
 			// Constructor
 			Pidgey();
-
-			// Member function to perform a Gust attack
+		private:
 			void WingAttack(Pokemon& target);
 		};
 	}

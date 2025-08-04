@@ -8,7 +8,7 @@ namespace N_Pokemon {
 		public:
 			//Constructor
 			Pikachu();
-
+		private:
 			void thunderShock(Pokemon& target);
 		};
 	}
