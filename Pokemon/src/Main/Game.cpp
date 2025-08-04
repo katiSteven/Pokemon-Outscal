@@ -51,7 +51,7 @@ namespace N_Main {
             case 2:
                 std::cout << "You head to the PokeCenter.\\n";
                 player.chosenPokemon.heal();
-                std::cout << player.chosenPokemon.name << "'s health is fully restored!\\n";
+                std::cout << player.chosenPokemon.getName() << "'s health is fully restored!\\n";
                 break;
             case 3:
                 cout << "You march up to the Gym, but it's closed for renovations. Seems like even Gym Leaders need a break!\\n";
