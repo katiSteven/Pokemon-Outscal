@@ -10,7 +10,7 @@ namespace N_Character {
 
     ProfessorOak::ProfessorOak(std::string p_name) : name(p_name) {}
 
-    void ProfessorOak::greetPlayer(N_Player::Player& player) {
+    void ProfessorOak::greetPlayer(N_Player::Player& player) const {
         cout << name << ": Hello there!Welcome to the world of Pokémon!\n";
         N_Utility::Utility::waitForEnter();
         cout << name << ": My name is Oak.People call me the Pokémon Professor!\n";
@@ -24,7 +24,7 @@ namespace N_Character {
         N_Utility::Utility::clearConsole();
     }
 
-    void ProfessorOak::offerPokemonChoices(N_Player::Player& player) {
+    void ProfessorOak::offerPokemonChoices(N_Player::Player& player) const {
         cout << name << ": I have three Pokemon here with me. They’re all quite feisty!\n";
         N_Utility::Utility::waitForEnter();
         cout << "1. Charmander - The fire type. A real hothead!\n";
