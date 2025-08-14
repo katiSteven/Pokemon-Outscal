@@ -45,13 +45,13 @@ namespace N_Main {
             switch (choice) {
             case 1:
 
-                encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+                encounteredPokemon = new N_Pokemon::Pokemon(encounterManager.getRandomPokemonFromGrass(forestGrass));
                 battleManager.startBattle(player, encounteredPokemon);
                 break;
             case 2:
                 std::cout << "You head to the PokeCenter.\\n";
-                player.chosenPokemon.heal();
-                std::cout << player.chosenPokemon.getName() << "'s health is fully restored!\\n";
+                player.chosenPokemon->heal();
+                std::cout << player.chosenPokemon->getName() << "'s health is fully restored!\\n";
                 break;
             case 3:
                 cout << "You march up to the Gym, but it's closed for renovations. Seems like even Gym Leaders need a break!\\n";
@@ -74,4 +74,7 @@ namespace N_Main {
         cout << "Goodbye, " << player.name << "! Thanks for playing!\n";
     }
 
+    Game::~Game() {
+        delete encounteredPokemon;
+    }
 }

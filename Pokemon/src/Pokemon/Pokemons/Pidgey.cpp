@@ -6,7 +6,12 @@
 namespace N_Pokemon {
 	namespace N_Pokemons {
 
-		Pidgey::Pidgey() : Pokemon("Pidgey", PokemonType::NORMAL, 100, 35) {}
+		Pidgey::Pidgey() {
+			name = "Pidgey";
+			p_type = PokemonType::NORMAL;
+			health = 100;
+			attackPower = 35;
+		}
 
 		void Pidgey::WingAttack(Pokemon& target) {
 			
@@ -17,7 +22,7 @@ namespace N_Pokemon {
 		}
 
 		void Pidgey::attack(Pokemon* target) {
-			WingAttack(target);
+			WingAttack(*target);
 		}
 	}
 }

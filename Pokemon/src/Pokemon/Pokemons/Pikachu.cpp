@@ -6,7 +6,12 @@
 namespace N_Pokemon {
 	namespace N_Pokemons {
 		using namespace std;
-		Pikachu::Pikachu() : Pokemon("Pikachu", PokemonType::ELECTRIC, 100, 15) {}
+		Pikachu::Pikachu() {
+			name = "Pikachu";
+			p_type = PokemonType::ELECTRIC;
+			health = 100;
+			attackPower = 15;
+		}
 
 		void N_Pokemon::N_Pokemons::Pikachu::thunderShock(Pokemon& target)
 		{
@@ -18,7 +23,7 @@ namespace N_Pokemon {
 
 		void N_Pokemons::Pikachu::attack(Pokemon* target)
 		{
-			thunderShock(target);
+			thunderShock(*target);
 		}
 	}
 }

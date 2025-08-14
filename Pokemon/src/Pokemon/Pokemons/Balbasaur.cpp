@@ -5,7 +5,12 @@
 
 namespace N_Pokemon {
 	namespace N_Pokemons {
-		Balbasaur::Balbasaur() : Pokemon("Balbasaur", PokemonType::GRASS, 100, 35) {}
+		Balbasaur::Balbasaur() {
+			name = "Balbasaur";
+			p_type = PokemonType::GRASS;
+			health = 100;
+			attackPower = 35;
+		}
 
 		void Balbasaur::vineWhip(Pokemon& target) {
 			cout << name << " uses Vine Whip on " << target.getName() << "!" << std::endl;
@@ -14,7 +19,7 @@ namespace N_Pokemon {
 		}
 
 		void Balbasaur::attack(Pokemon* target) {
-			vineWhip(target);
+			vineWhip(*target);
 		}
 	}
 }

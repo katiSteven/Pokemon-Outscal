@@ -5,7 +5,12 @@
 #include "../include/Utility/Utility.hpp"
 namespace N_Pokemon {
 	namespace N_Pokemons {
-		Charmander::Charmander() : Pokemon("Charmander", PokemonType::FIRE, 100, 35) {}
+		Charmander::Charmander() {
+			name = "Charmander";
+			p_type = PokemonType::FIRE;
+			health = 100;
+			attackPower = 35;
+		}
 		void Charmander::flameBurst(Pokemon& target) {
 			cout << name << " uses Flame Burst on " << target.getName() << "!" << endl;
 			target.TakeDamage(35);
@@ -13,7 +18,7 @@ namespace N_Pokemon {
 		}
 
 		void Charmander::attack(Pokemon* target) {
-			flameBurst(target);
+			flameBurst(*target);
 		}
 	}
 }

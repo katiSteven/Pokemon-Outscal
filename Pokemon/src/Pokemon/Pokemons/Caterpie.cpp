@@ -6,7 +6,12 @@
 namespace N_Pokemon {
 	namespace N_Pokemons {
 
-		Caterpie::Caterpie() : Pokemon("Caterpie", PokemonType::BUG, 100, 10) {}
+		Caterpie::Caterpie() {
+			name = "Caterpie";
+			p_type = PokemonType::BUG;
+			health = 100;
+			attackPower = 10;
+		}
 
 		void Caterpie::bugBite(Pokemon& target) {
 			cout << name << "name uses Wing Attack on " << target.getName() << "!" << endl;
@@ -16,7 +21,7 @@ namespace N_Pokemon {
 		}
 
 		void Caterpie::attack(Pokemon* target) {
-			bugBite(target);
+			bugBite(*target);
 		}
 	}
 }

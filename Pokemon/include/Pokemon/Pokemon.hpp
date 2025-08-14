@@ -1,3 +1,4 @@
+#pragma once
 #include<iostream>
 //
 #include "../include/Pokemon/PokemonType.hpp"
@@ -36,7 +37,7 @@ namespace N_Pokemon {
 		void setAttackPower(int p_attackPower);
 
         //Methods
-        virtual void attack(Pokemon* target) = 0;
+        virtual void attack(Pokemon* target);
 
         void TakeDamage(int damage);
 

@@ -5,7 +5,12 @@
 
 namespace N_Pokemon {
 	namespace N_Pokemons {
-		Zubat::Zubat() : Pokemon("Zubat", PokemonType::POISON, 100, 20) {}
+		Zubat::Zubat() {
+			name = "Zubat";
+			p_type = PokemonType::POISON;
+			health = 100;
+			attackPower = 20;
+		}
 
 		void Zubat::Supersonic(Pokemon& target) {
 			cout << name << "uses Wing Attack on " << target.getName() << "!";
@@ -16,7 +21,7 @@ namespace N_Pokemon {
 		}
 
 		void Zubat::attack(Pokemon* target) {
-			Supersonic(target);
+			Supersonic(*target);
 		}
 	}
 }

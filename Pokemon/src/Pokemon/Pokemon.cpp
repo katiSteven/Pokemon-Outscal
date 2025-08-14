@@ -27,13 +27,13 @@ namespace N_Pokemon {
 	void Pokemon::setMaxHealth(int p_maxHealth) { maxHealth = p_maxHealth; }
 	void Pokemon::setAttackPower(int p_attackPower) { attackPower = p_attackPower; }
 
-	/*void Pokemon::attack(Pokemon& target)
+	void Pokemon::attack(Pokemon* target)
 	{
 		int damage = attackPower;
-		cout << name << " attacks " << target.name << " for " << damage << " damage!\\n";
-		target.TakeDamage(damage);
+		cout << name << " attacks " << target->name << " for " << damage << " damage!\\n";
+		target->TakeDamage(damage);
 		N_Utility::Utility::waitForEnter();
-	}*/
+	}
 
 	void Pokemon::TakeDamage(int damage)
 	{

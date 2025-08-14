@@ -9,7 +9,7 @@ namespace N_Pokemon {
 			Balbasaur();
 		private:
 			void vineWhip(Pokemon& target);
-			void attack(Pokemon* target);
+			void attack(Pokemon* target) override;
 		};
 	}
 }
