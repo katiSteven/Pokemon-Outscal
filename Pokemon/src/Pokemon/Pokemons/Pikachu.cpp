@@ -15,5 +15,10 @@ namespace N_Pokemon {
 			target.TakeDamage(damage);
 			N_Utility::Utility::waitForEnter();
 		}
+
+		void N_Pokemons::Pikachu::attack(Pokemon* target)
+		{
+			thunderShock(target);
+		}
 	}
 }

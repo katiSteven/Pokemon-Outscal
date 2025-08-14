@@ -8,7 +8,7 @@ using namespace std;
 namespace N_Player {
     Player::Player() {
         name = "Trainer";
-        chosenPokemon = N_Pokemon::Pokemon();
+        chosenPokemon = new N_Pokemon::Pokemon();
     }
 
     Player::Player(string p_name, const N_Pokemon::Pokemon& p_chosenPokemon) {

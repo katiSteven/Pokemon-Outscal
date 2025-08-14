@@ -15,5 +15,9 @@ namespace N_Pokemon {
 			
 			N_Utility::Utility::waitForEnter();
 		}
+
+		void Pidgey::attack(Pokemon* target) {
+			WingAttack(target);
+		}
 	}
 }

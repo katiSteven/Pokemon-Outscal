@@ -11,5 +11,9 @@ namespace N_Pokemon {
 			target.TakeDamage(35);
 			N_Utility::Utility::waitForEnter();
 		}
+
+		void Charmander::attack(Pokemon* target) {
+			flameBurst(target);
+		}
 	}
 }

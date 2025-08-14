@@ -14,5 +14,9 @@ namespace N_Pokemon {
 			
 			N_Utility::Utility::waitForEnter();
 		}
+
+		void Zubat::attack(Pokemon* target) {
+			Supersonic(target);
+		}
 	}
 }

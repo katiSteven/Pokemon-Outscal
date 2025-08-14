@@ -14,5 +14,9 @@ namespace N_Pokemon {
 
 			N_Utility::Utility::waitForEnter();
 		}
+
+		void Caterpie::attack(Pokemon* target) {
+			bugBite(target);
+		}
 	}
 }

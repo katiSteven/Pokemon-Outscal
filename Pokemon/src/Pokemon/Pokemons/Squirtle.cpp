@@ -12,5 +12,9 @@ namespace N_Pokemon {
 			target.TakeDamage(35);
 			N_Utility::Utility::waitForEnter();
 		}
+
+		void Squirtle::attack(Pokemon* target) {
+			waterSplash(target);
+		}
 	}
 }
