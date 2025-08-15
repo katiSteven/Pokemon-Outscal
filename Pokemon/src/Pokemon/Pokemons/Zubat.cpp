@@ -14,9 +14,17 @@ namespace N_Pokemon {
 
 		void Zubat::Supersonic(Pokemon& target) {
 			cout << name << "uses Wing Attack on " << target.getName() << "!";
+			N_Utility::Utility::waitForEnter();
 
-			target.TakeDamage(20);
-			
+			cout << target.getName() << " is engulfed in dust, loses visibility...\n";
+			N_Utility::Utility::waitForEnter();
+
+			target.TakeDamage(attackPower);
+
+			if (target.isFainted())
+				cout << target.getName() << " fainted!\n";
+			else
+				cout << target.getName() << " has " << target.getHealth() << " HP left.\n";
 			N_Utility::Utility::waitForEnter();
 		}
 

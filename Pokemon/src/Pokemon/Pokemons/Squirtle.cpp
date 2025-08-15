@@ -14,7 +14,17 @@ namespace N_Pokemon {
 
 		void Squirtle::waterSplash(Pokemon& target) {
 			cout << name << " uses Water Splash on " << target.getName() << "!" << std::endl;
-			target.TakeDamage(35);
+			N_Utility::Utility::waitForEnter();
+
+			cout << target.getName() << " is drenched in water...\n";
+			N_Utility::Utility::waitForEnter();
+
+			target.TakeDamage(attackPower);
+
+			if (target.isFainted())
+				cout << target.getName() << " fainted!\n";
+			else
+				cout << target.getName() << " has " << target.getHealth() << " HP left.\n";
 			N_Utility::Utility::waitForEnter();
 		}
 

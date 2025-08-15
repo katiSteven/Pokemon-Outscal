@@ -15,9 +15,18 @@ namespace N_Pokemon {
 
 		void N_Pokemon::N_Pokemons::Pikachu::thunderShock(Pokemon& target)
 		{
-			int damage = attackPower;
-			cout << name << " attacks " << target.getName() << " for " << damage << " damage!\\n";
-			target.TakeDamage(damage);
+			cout << name << " attacks " << target.getName() << " for " << attackPower << " damage!\\n";
+			N_Utility::Utility::waitForEnter();
+
+			cout << target.getName() << " is shocked and rendered immobile...\n";
+			N_Utility::Utility::waitForEnter();
+
+			target.TakeDamage(attackPower);
+
+			if (target.isFainted())
+				cout << target.getName() << " fainted!\n";
+			else
+				cout << target.getName() << " has " << target.getHealth() << " HP left.\n";
 			N_Utility::Utility::waitForEnter();
 		}
 

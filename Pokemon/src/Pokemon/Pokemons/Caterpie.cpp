@@ -15,8 +15,17 @@ namespace N_Pokemon {
 
 		void Caterpie::bugBite(Pokemon& target) {
 			cout << name << "name uses Wing Attack on " << target.getName() << "!" << endl;
-			target.TakeDamage(20);
+			N_Utility::Utility::waitForEnter();
 
+			cout << " Attack cuts through your "<< target.getName()<<"'s defense...\n";
+			N_Utility::Utility::waitForEnter();
+
+			target.TakeDamage(attackPower);
+
+			if (target.isFainted())
+				cout << target.getName() << " fainted!\n";
+			else
+				cout << target.getName() << " has " << target.getHealth() << " HP left.\n";
 			N_Utility::Utility::waitForEnter();
 		}
 

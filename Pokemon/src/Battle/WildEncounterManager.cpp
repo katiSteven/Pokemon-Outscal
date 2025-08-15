@@ -3,7 +3,7 @@
 #include <vector>
 //
 //#include "Pokemon.hpp"
-#include "..\include\Pokemon\Pokemon.hpp"
+#include "../include/Pokemon/Pokemon.hpp"
 #include "../include/Pokemon/Grass.hpp"
 //#include "Game.h"
 #include "../include/Battle/WildEncounterManager.hpp"
@@ -12,7 +12,7 @@ namespace N_Battle {
 		srand(time(0)); // Seed the random number generator
 	}
 
-	N_Pokemon::Pokemon WildEncounterManager::getRandomPokemonFromGrass(const N_Pokemon::Grass& grass) {
+	N_Pokemon::Pokemon*  WildEncounterManager::getRandomPokemonFromGrass(N_Pokemon::Grass& grass) {
 		int randomIndex;
 
 		randomIndex = rand() % grass.wildPokemon.size();

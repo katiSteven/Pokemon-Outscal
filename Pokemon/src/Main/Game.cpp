@@ -6,6 +6,9 @@
 #include "../include/Main/Game.h"
 //#include "WildEncounterManager.hpp"
 #include "../include/Battle/BattleManager.hpp"
+#include "../include/Pokemon/Pokemons/Zubat.hpp"
+#include "../include/Pokemon/Pokemons/Caterpie.hpp"
+#include "../include/Pokemon/Pokemons/Pidgey.hpp"
 
 using namespace std;
 namespace N_Main {
@@ -13,10 +16,9 @@ namespace N_Main {
 
         forestGrass = N_Pokemon::Grass{
             forestGrass.wildPokemon = {
-                N_Pokemon::Pokemon("Zubat", N_Pokemon::PokemonType::GRASS, 40, 20),
-                N_Pokemon::Pokemon("Caterpie", N_Pokemon::PokemonType::GRASS, 35, 15),
-                N_Pokemon::Pokemon("Pidgey", N_Pokemon::PokemonType::GRASS, 40, 25)
-            },
+                new N_Pokemon::N_Pokemons::Zubat(),
+                new N_Pokemon::N_Pokemons::Caterpie(),
+                new N_Pokemon::N_Pokemons::Pidgey()},
             80,
             "Forest"
         };
@@ -44,8 +46,16 @@ namespace N_Main {
 
             switch (choice) {
             case 1:
-
-                encounteredPokemon = new N_Pokemon::Pokemon(encounterManager.getRandomPokemonFromGrass(forestGrass));
+                forestGrass = N_Pokemon::Grass{
+                forestGrass.wildPokemon = {
+                        new N_Pokemon::N_Pokemons::Zubat(),
+                        new N_Pokemon::N_Pokemons::Caterpie(),
+                        new N_Pokemon::N_Pokemons::Pidgey()
+                    },
+                    80,
+                    "Forest"
+                };
+                encounteredPokemon = (encounterManager.getRandomPokemonFromGrass(forestGrass));
                 battleManager.startBattle(player, encounteredPokemon);
                 break;
             case 2:

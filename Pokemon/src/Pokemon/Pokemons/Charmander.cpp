@@ -13,7 +13,17 @@ namespace N_Pokemon {
 		}
 		void Charmander::flameBurst(Pokemon& target) {
 			cout << name << " uses Flame Burst on " << target.getName() << "!" << endl;
-			target.TakeDamage(35);
+			N_Utility::Utility::waitForEnter();
+
+			cout << target.getName() << " is engulfed in flames...\n";
+			N_Utility::Utility::waitForEnter();
+
+			target.TakeDamage(attackPower);
+
+			if (target.isFainted())
+				cout << target.getName() << " fainted!\n";
+			else
+				cout << target.getName() << " has " << target.getHealth() << " HP left.\n";
 			N_Utility::Utility::waitForEnter();
 		}
 

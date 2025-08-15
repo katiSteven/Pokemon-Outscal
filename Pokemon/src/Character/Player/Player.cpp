@@ -13,7 +13,7 @@ using namespace std;
 namespace N_Player {
     Player::Player() {
         name = "Trainer";
-        chosenPokemon = new N_Pokemon::Pokemon();
+        //chosenPokemon = new N_Pokemon::Pokemon();
     }
 
     Player::Player(string p_name) {

@@ -54,6 +54,7 @@ namespace N_Battle {
 		}
 		else {
 			cout << battleState.playerPokemon->getName() << "is victorious! Keep an eye on your Pokémon's health.\n";
+			delete battleState.wildPokemon;
 			//playerPokemon.heal(); // Heal the player's Pokémon after winning
 		}
 		N_Utility::Utility::waitForEnter();
