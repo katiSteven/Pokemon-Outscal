@@ -1,23 +1,21 @@
 #include <iostream>
 //#include "../include/Pokemon/PokemonType.hpp"
-#include "../include/Pokemon/Pokemons/Caterpie.hpp"
-#include "../include/Utility/Utility.hpp"
+#include "../include/Pokemon/Pokemons/Charmander.hpp"
 
+#include "../include/Utility/Utility.hpp"
 namespace N_Pokemon {
 	namespace N_Pokemons {
-
-		Caterpie::Caterpie() {
-			name = "Caterpie";
-			p_type = PokemonType::BUG;
+		Charmander::Charmander() {
+			name = "Charmander";
+			p_type = PokemonType::FIRE;
 			health = 100;
-			attackPower = 10;
+			attackPower = 35;
 		}
-
-		void Caterpie::bugBite(Pokemon& target) {
-			cout << name << "name uses Wing Attack on " << target.getName() << "!" << endl;
+		void Charmander::flameBurst(Pokemon& target) {
+			cout << name << " uses Flame Burst on " << target.getName() << "!" << endl;
 			N_Utility::Utility::waitForEnter();
 
-			cout << " Attack cuts through your "<< target.getName()<<"'s defense...\n";
+			cout << target.getName() << " is engulfed in flames...\n";
 			N_Utility::Utility::waitForEnter();
 
 			target.TakeDamage(attackPower);
@@ -29,8 +27,8 @@ namespace N_Pokemon {
 			N_Utility::Utility::waitForEnter();
 		}
 
-		void Caterpie::attack(Pokemon* target) {
-			bugBite(*target);
+		void Charmander::attack(Pokemon* target) {
+			flameBurst(*target);
 		}
 	}
 }

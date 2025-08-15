@@ -1,24 +1,22 @@
 #include <iostream>
 //#include "../include/Pokemon/PokemonType.hpp"
-#include "../include/Pokemon/Pokemons/Pikachu.hpp"
 #include "../include/Utility/Utility.hpp"
+#include "../include/Pokemon/Pokemons/Squirtle.hpp"
 
 namespace N_Pokemon {
 	namespace N_Pokemons {
-		using namespace std;
-		Pikachu::Pikachu() {
-			name = "Pikachu";
-			p_type = PokemonType::ELECTRIC;
+		Squirtle::Squirtle() {
+			name = "Squirtle";
+			p_type = PokemonType::WATER;
 			health = 100;
-			attackPower = 15;
+			attackPower = 35;
 		}
 
-		void N_Pokemon::N_Pokemons::Pikachu::thunderShock(Pokemon& target)
-		{
-			cout << name << " attacks " << target.getName() << " for " << attackPower << " damage!\\n";
+		void Squirtle::waterSplash(Pokemon& target) {
+			cout << name << " uses Water Splash on " << target.getName() << "!" << std::endl;
 			N_Utility::Utility::waitForEnter();
 
-			cout << target.getName() << " is shocked and rendered immobile...\n";
+			cout << target.getName() << " is drenched in water...\n";
 			N_Utility::Utility::waitForEnter();
 
 			target.TakeDamage(attackPower);
@@ -30,9 +28,8 @@ namespace N_Pokemon {
 			N_Utility::Utility::waitForEnter();
 		}
 
-		void N_Pokemons::Pikachu::attack(Pokemon* target)
-		{
-			thunderShock(*target);
+		void Squirtle::attack(Pokemon* target) {
+			waterSplash(*target);
 		}
 	}
 }

@@ -6,6 +6,9 @@
 #include "../include/Main/Game.h"
 //#include "WildEncounterManager.hpp"
 #include "../include/Battle/BattleManager.hpp"
+#include "../include/Pokemon/Pokemons/Zubat.hpp"
+#include "../include/Pokemon/Pokemons/Caterpie.hpp"
+#include "../include/Pokemon/Pokemons/Pidgey.hpp"
 
 using namespace std;
 namespace N_Main {
@@ -13,10 +16,9 @@ namespace N_Main {
 
         forestGrass = N_Pokemon::Grass{
             forestGrass.wildPokemon = {
-                N_Pokemon::Pokemon("Zubat", N_Pokemon::PokemonType::GRASS, 40, 20),
-                N_Pokemon::Pokemon("Caterpie", N_Pokemon::PokemonType::GRASS, 35, 15),
-                N_Pokemon::Pokemon("Pidgey", N_Pokemon::PokemonType::GRASS, 40, 25)
-            },
+                new N_Pokemon::N_Pokemons::Zubat(),
+                new N_Pokemon::N_Pokemons::Caterpie(),
+                new N_Pokemon::N_Pokemons::Pidgey()},
             80,
             "Forest"
         };
@@ -44,14 +46,22 @@ namespace N_Main {
 
             switch (choice) {
             case 1:
-
-                encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+                forestGrass = N_Pokemon::Grass{
+                forestGrass.wildPokemon = {
+                        new N_Pokemon::N_Pokemons::Zubat(),
+                        new N_Pokemon::N_Pokemons::Caterpie(),
+                        new N_Pokemon::N_Pokemons::Pidgey()
+                    },
+                    80,
+                    "Forest"
+                };
+                encounteredPokemon = (encounterManager.getRandomPokemonFromGrass(forestGrass));
                 battleManager.startBattle(player, encounteredPokemon);
                 break;
             case 2:
                 std::cout << "You head to the PokeCenter.\\n";
-                player.chosenPokemon.heal();
-                std::cout << player.chosenPokemon.getName() << "'s health is fully restored!\\n";
+                player.chosenPokemon->heal();
+                std::cout << player.chosenPokemon->getName() << "'s health is fully restored!\\n";
                 break;
             case 3:
                 cout << "You march up to the Gym, but it's closed for renovations. Seems like even Gym Leaders need a break!\\n";
@@ -74,4 +84,7 @@ namespace N_Main {
         cout << "Goodbye, " << player.name << "! Thanks for playing!\n";
     }
 
+    Game::~Game() {
+        delete encounteredPokemon;
+    }
 }
